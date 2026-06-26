@@ -4,7 +4,7 @@ TypeScript decision-making application with weighted random selection, canvas wh
 
 ## Live Demo
 
-Coming soon.
+[Open Decision Making Tool](https://elderdragonfly.github.io/decision-making-tool/)
 
 ## Overview
 
@@ -51,6 +51,7 @@ decision-making-tool/
   src/assets/          # images, fonts, audio
   src/components/      # UI components
   src/styles/          # Sass styles
+  docs/                # production build for GitHub Pages
   package.json         # scripts and dependencies
   webpack.config.mjs   # Webpack configuration
   tsconfig.json        # TypeScript configuration
@@ -114,6 +115,24 @@ npm run lint
 ```
 
 Runs ESLint checks.
+
+## Deployment
+
+The project is deployed with GitHub Pages.
+
+Production files are generated with:
+
+```bash
+npm run build
+```
+
+The generated `dist` files are copied to the `docs` folder, which is used as the GitHub Pages publishing source.
+
+Live demo:
+
+```text
+https://elderdragonfly.github.io/decision-making-tool/
+```
 
 ## Notes
 

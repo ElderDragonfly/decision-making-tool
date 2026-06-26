@@ -34,9 +34,7 @@ export default ({ development }) => ({
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext]',
-    publicPath: development
-      ? '/'
-      : '/elderdragonfly-JSFE2024Q4/decision-making-tool/',
+    publicPath: development ? '/' : '/decision-making-tool/',
   },
   module: {
     rules: [

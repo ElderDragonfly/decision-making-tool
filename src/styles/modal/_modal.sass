@@ -1,0 +1,40 @@
+@use '../base/_variables' as vars
+@use '../base/_mixins' as mixins
+
+.modal
+  display: flex
+  flex-direction: column
+  gap: vars.$options-gap
+  background-color: vars.$main-modal-bg-color
+  padding: 10px
+  border-radius: 10px
+
+  width: 90%
+  max-width: 600px
+  box-sizing: border-box
+
+.modal__textarea
+  background-color: color-mix(in srgb, vars.$main-button-color 35%, black 65%)
+  color: vars.$main-text-color
+
+  white-space: pre-wrap
+  overflow-wrap: anywhere
+  word-break: break-word
+  resize: none
+  border: none
+  outline: none
+  overflow-y: auto
+
+  width: 100%
+  box-sizing: border-box
+  min-width: 0
+  flex: 1 1 200px
+
+.modal__controls
+  display: flex
+  flex-wrap: nowrap
+  gap: 5px
+  width: 100%
+
+.modal__button
+  flex-grow: 3

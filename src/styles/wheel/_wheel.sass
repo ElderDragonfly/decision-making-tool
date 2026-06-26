@@ -1,0 +1,82 @@
+@use '../base/_variables' as vars
+@use '../base/_mixins' as mixins
+
+.picker
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: 0 5px
+
+.picker__title
+  @include mixins.text-shadow()
+  text-align: center
+  margin: 0 0 20px 0
+
+.picker__controls
+  position: relative
+  display: flex
+  gap: 5px
+  margin-bottom: 5px
+  &::before
+    content: ''
+    @include mixins.button(5px)
+    border-radius: 5px 0 0 5px
+    background: url('../assets/images/icons/icon-timer.png') center center no-repeat, linear-gradient(to bottom, vars.$main-button-color, #50747a)
+    background-size: 60%
+    position: absolute
+    left: 90px
+    top: 0
+    width: 30px
+    height: 30px
+    z-index: 10
+    pointer-events: none
+
+.picker__button--back
+  width: 30px
+  height: 30px
+  background: url('../assets/images/icons/icon-rewind-button.png') center center no-repeat, linear-gradient(to bottom, vars.$main-button-color, #50747a)
+  background-size: 70%
+.picker__button--sound
+  width: 30px
+  height: 30px
+  background: url('../assets/images/icons/icon-sound-on.png') center center no-repeat, linear-gradient(to bottom, vars.$main-button-color, #50747a)
+  background-size: 70%
+  &.picker__button--sound-off
+    background-image: url('../assets/images/icons/icon-sound-off.png'), linear-gradient(to bottom, vars.$main-button-color, #50747a)
+.picker__input
+  @include mixins.input
+  height: 34px
+  position: relative
+  max-width: 50px
+  padding-left: 40px
+  margin-left: 3px
+  border-radius: 0 5px 5px 0
+.picker__button--start
+  margin-bottom: 20px
+  background: url('../assets/images/icons/icon-start-button.png') center center no-repeat, linear-gradient(to bottom, vars.$main-button-color, #50747a)
+  background-size: 13%
+  width: 175px
+  height: 30px
+  &.running
+    pointer-events: none
+    cursor: default
+    transform: translateY(1px)
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .4), inset 0 2px 4px rgba(0, 0, 0, .3)
+    filter: brightness(.95)
+
+.picker__help-title
+  box-shadow:  0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.4), 0 0 15px rgba(255, 255, 255, 0.2)
+  width: 100%
+  font-size: 1.2em
+  text-align: center
+  display: flex
+  justify-content: center
+  padding: 5px 0
+  margin: 0 0 20px 0
+
+.picker__wheel
+  width: 100%
+.picker__canvas
+  width: 100%;
+  height: 100%;
+  display: block;

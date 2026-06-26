@@ -1,0 +1,26 @@
+@use '../base/_variables' as vars
+@use '../base/_mixins' as mixins
+
+body
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  margin: 0
+  padding: 0
+  color: vars.$main-text-color
+  background-color: vars.$main-bg-color
+  font-family: vars.$font-family-base
+  font-weight: vars.$font-weight-regular
+  &.modal
+    overflow: hidden
+
+.app
+  display: flex
+  justify-content: center
+  align-items: center
+
+.button
+  @include mixins.button(5px)
+  @include mixins.button-states
